@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Quire API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,9 +212,6 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -223,204 +220,297 @@
       <div id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Kittens">Get All Kittens</a>
+                    <a href="#about-the-api-versioning" class="toc-h2 toc-link" data-title="Introduction">About the api versioning</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Kittens">Get a Specific Kitten</a>
+                    <a href="#about-the-url-format" class="toc-h2 toc-link" data-title="Introduction">About the url format</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Kittens">Delete a Specific Kitten</a>
+                    <a href="#about-the-authentication" class="toc-h2 toc-link" data-title="Introduction">About the authentication</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#sessions" class="toc-h1 toc-link" data-title="Sessions">Sessions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-session" class="toc-h2 toc-link" data-title="Sessions">Create a session</a>
+                  </li>
+                  <li>
+                    <a href="#destroy-a-session" class="toc-h2 toc-link" data-title="Sessions">Destroy a session</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#products" class="toc-h1 toc-link" data-title="Products">Products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-the-products" class="toc-h2 toc-link" data-title="Products">Get all the products</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-nearby-products" class="toc-h2 toc-link" data-title="Products">Get all nearby products</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-product" class="toc-h2 toc-link" data-title="Products">Get a product</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-product" class="toc-h2 toc-link" data-title="Products">Create a product</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-product" class="toc-h2 toc-link" data-title="Products">Update a product</a>
+                  </li>
+                  <li>
+                    <a href="#destroy-a-product" class="toc-h2 toc-link" data-title="Products">Destroy a product</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#product-images" class="toc-h1 toc-link" data-title="Product images">Product images</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-the-product-images" class="toc-h2 toc-link" data-title="Product images">Get all the product images</a>
+                  </li>
+                  <li>
+                    <a href="#create-product-image" class="toc-h2 toc-link" data-title="Product images">Create product image</a>
+                  </li>
+                  <li>
+                    <a href="#destroy-product-image" class="toc-h2 toc-link" data-title="Product images">Destroy product image</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#update-user" class="toc-h2 toc-link" data-title="Users">Update user</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#wished-products" class="toc-h1 toc-link" data-title="Wished products">Wished products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#index" class="toc-h2 toc-link" data-title="Wished products">Index</a>
+                  </li>
+                  <li>
+                    <a href="#create" class="toc-h2 toc-link" data-title="Wished products">Create</a>
+                  </li>
+                  <li>
+                    <a href="#delete" class="toc-h2 toc-link" data-title="Wished products">Delete</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#skipped-products" class="toc-h1 toc-link" data-title="Skipped products">Skipped products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-2" class="toc-h2 toc-link" data-title="Skipped products">Create</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#chats" class="toc-h1 toc-link" data-title="Chats">Chats</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-3" class="toc-h2 toc-link" data-title="Chats">Create</a>
+                  </li>
+              </ul>
           </li>
       </div>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='introduction'>Introduction</h1><h2 id='about-the-api-versioning'>About the api versioning</h2>
+<p>Currently, there is only one version for the api. Thus v1 is the one by default. However, in the future, you should specify the api version through an Accept header:</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p><code>Accept: application/vnd.quire-api.&lt;version&gt;</code></p>
 
-<p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<p><code>&lt;version&gt;</code> being v1, v2, etc.</p>
+<h2 id='about-the-url-format'>About the url format</h2>
+<p>There is no need to append a &#39;.json&#39; to the urls as the json format is set as default.</p>
+<h2 id='about-the-authentication'>About the authentication</h2>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+<pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span>
   -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code>meowmeowmeow</code> with the corresponding access token.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>Quire uses access token to authenticate against some specific routes such as creating or destroying products. In order to obtain that access token, you should request it through the sessions endpoint.</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>Quire expects to receive a header with the following form:</p>
 
 <p><code>Authorization: meowmeowmeow</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>meowmeowmeow</code> with the corresponding access token.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='sessions'>Sessions</h1><h2 id='create-a-session'>Create a session</h2><pre class="highlight shell tab-shell"><code>curl --request POST  
+  --url https://quire-api.herokuapp.com/sessions
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+  --data <span class="s1">'
+    {
+        "user": {
+            "last_location": "POINT(-78.1323 -12.4141)"
+        },
+        "fb_access_token": "RxdEdkB7NqnU5hikPG7zkuXT"
+    }
+  '</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">287</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"narenkukreja@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fb_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7582198748976"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Naren Kukreja"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_loc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-79.1323"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-12.4141"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r4Vb5oH7gDDKA47ZBnYCheVx"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"preference_radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint will expect to receive an access token obtained after a successful facebook log in and will generate an api access token to perform subsequent requests.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<p>In case the specified user is not present in the database, a new one will be created with the fields obtained from the facebook account along with the ones passed inside the  <code>user</code> key.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://quire-api.herokuapp.com/sessions</code></p>
+<h3 id='headers'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h3 id='body'>Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fb_access_token</td>
+<td>Access token obtained after a successful facebook login</td>
+<td>true</td>
+</tr>
+<tr>
+<td>user.last_location</td>
+<td>User&#39;s last location. Must follow the EWKT format : &quot;POINT (longitude latitude)&quot;</td>
+<td>true</td>
+</tr>
+</tbody></table>
+<h2 id='destroy-a-session'>Destroy a session</h2><pre class="highlight shell tab-shell"><code>curl --request DELETE  
+  --url https://quire-api.herokuapp.com/sessions
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Destroys the corresponding session by invalidating the access token.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>DELETE https://quire-api.herokuapp.com/sessions</code></p>
+<h3 id='headers-2'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your access token</td>
+</tr>
+</tbody></table>
+<h1 id='products'>Products</h1><h2 id='get-all-the-products'>Get all the products</h2><pre class="highlight shell tab-shell"><code>curl --request GET
+  --url https://quire-api.herokuapp.com/users/2/products?page<span class="o">=</span>1&amp;per_page<span class="o">=</span>2
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Digital Compressor"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Non labore eum et voluptas veniam corrupti deserunt totam. Deleniti aut natus ut adipisci. Aut sit sunt dolorem ut similique possimus quis. Voluptas minus necessitatibus molestias sed. At et maiores consectetur dolorum tempore assumenda."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"448.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-27T05:07:16.444Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chat_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sendbird.com/chats/12314"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seller"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"april"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fb_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7582198748976"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tiesha@williamson.us"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kathy Pollich"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/003/original/april.png?1482815236"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/003/original/kesha_huels.png?1482815236"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/004/original/jackelyn.rice.png?1482815238"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Side Portable Controller 2000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eum quisquam nisi omnis aliquid praesentium vel eligendi. Dolores quisquam deleniti distinctio ducimus est eos. Quaerat enim dolores laboriosam culpa temporibus."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"376.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-27T05:07:11.996Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chat_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sendbird.com/chats/12314"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seller"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"april"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fb_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7582198748976"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tiesha@williamson.us"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kathy Pollich"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/003/original/april.png?1482815236"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/001/original/ivan.png?1482815232"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/002/original/margy.png?1482815234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<p>This endpoint will return the products that belong to the specified user. It supports pagination by using the <code>page</code> and <code>per_page</code> params.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p><code>GET https://quire-api.herokuapp.com/users/&lt;user_id&gt;/products</code></p>
+<h3 id='url-parameters'>URL parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -428,64 +518,997 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>user_id</td>
+<td>user identifier</td>
+</tr>
+<tr>
+<td>page</td>
+<td>page number</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>number of elements per pag</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
+<h2 id='get-all-nearby-products'>Get all nearby products</h2><pre class="highlight shell tab-shell"><code>curl --request GET
+  --url https://quire-api.herokuapp.com/users/2/products/nearby?page<span class="o">=</span>1&amp;per_page<span class="o">=</span>2
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Digital Compressor"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Non labore eum et voluptas veniam corrupti deserunt totam. Deleniti aut natus ut adipisci. Aut sit sunt dolorem ut similique possimus quis. Voluptas minus necessitatibus molestias sed. At et maiores consectetur dolorum tempore assumenda."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"448.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-27T05:07:16.444Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chat_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sendbird.com/chats/12314"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seller"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"april"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fb_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7582198748976"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tiesha@williamson.us"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kathy Pollich"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/003/original/april.png?1482815236"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/003/original/kesha_huels.png?1482815236"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/004/original/jackelyn.rice.png?1482815238"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Side Portable Controller 2000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eum quisquam nisi omnis aliquid praesentium vel eligendi. Dolores quisquam deleniti distinctio ducimus est eos. Quaerat enim dolores laboriosam culpa temporibus."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"376.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-27T05:07:11.996Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chat_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sendbird.com/chats/12314"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seller"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"april"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fb_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7582198748976"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tiesha@williamson.us"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kathy Pollich"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/003/original/april.png?1482815236"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/001/original/ivan.png?1482815232"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/002/original/margy.png?1482815234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint will return the products belonging to users lastly located within a given radius. It supports pagination by using the <code>page</code> and <code>per_page</code> params.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://quire-api.herokuapp.com/users/&lt;user_id&gt;/products/nearby</code></p>
+<h3 id='headers-3'>Headers</h3>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Header</th>
+<th>Value</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request sucks</td>
+<td>Authorization</td>
+<td>Your access token</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-2'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>user identifier</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong</td>
+<td>page</td>
+<td>page number</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only</td>
+<td>per_page</td>
+<td>number of elements per pag</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-product'>Get a product</h2><pre class="highlight shell tab-shell"><code>curl --request GET
+  --url https://quire-api.herokuapp.com/users/2/products/1
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Side Portable Controller 2000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eum quisquam nisi omnis aliquid praesentium vel eligendi. Dolores quisquam deleniti distinctio ducimus est eos. Quaerat enim dolores laboriosam culpa temporibus."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"376.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-27T05:07:11.996Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chat_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sendbird.com/chats/12314"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seller"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"april"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fb_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7582198748976"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tiesha@williamson.us"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kathy Pollich"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/003/original/april.png?1482815236"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/001/original/ivan.png?1482815232"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/002/original/margy.png?1482815234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint will return the specified product that belong to the specified user.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://quire-api.herokuapp.com/users/&lt;user_id&gt;/products/&lt;product_id&gt;</code></p>
+<h3 id='url-parameters-3'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>user identifier</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found</td>
+<td>product_id</td>
+<td>product identifier</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-product'>Create a product</h2><pre class="highlight shell tab-shell"><code>curl --request POST
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+  --url https://quire-api.herokuapp.com/users/2/products
+  --data <span class="s1">'
+  {
+    "product": {
+        "name": "iPod Nano 6G",
+        "description": "Music and video player",
+        "price": 600,
+        "images_attributes": [
+            {
+                "img_base":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA..."
+            }
+        ]
+    }
+  }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">239</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iPod Nano 6g"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Music and video player"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"600"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-08T21:26:23.935Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chat_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seller"</span><span class="p">:</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vickie.legros"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fb_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7582198748976"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hwa.mcglynn@sawaynwolff.us"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Glory Auer"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/003/original/april.png?1482815236"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"images"</span><span class="p">:</span><span class="w">
+      </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">135</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/product_images/imgs/000/000/135/original/fred.png?1483910783"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint will create a new product with the provided fields and return a json representation of the just created product.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST https://quire-api.herokuapp.com/users/&lt;user_id&gt;/products</code></p>
+<h3 id='headers-4'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your access token</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method</td>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-4'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>user identifier</td>
+</tr>
+</tbody></table>
+<h3 id='body-2'>Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product.name</td>
+<td>Product name</td>
+<td>true</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json</td>
+<td>product.description</td>
+<td>Product description</td>
+<td>true</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers</td>
+<td>product.price</td>
+<td>Product price</td>
+<td>true</td>
 </tr>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot</td>
+<td>product.images_attributes</td>
+<td>Array of product images</td>
+<td>true, at least 1 image, at most 5, otherwise an error will be returned</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>product.images_attributes[].img_base</td>
+<td>Product image encoded with base 64</td>
+<td>true (for its scope)</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-product'>Update a product</h2><pre class="highlight shell tab-shell"><code>curl --request PATCH
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+  --url https://quire-api.herokuapp.com/users/2/products/239
+  --data <span class="s1">'
+  {
+    "product": {
+        "name": "iPod Nano 6.1G",
+        "price": 800,
+    }
+  }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">239</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iPod Nano 6.1G"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Est nesciunt rerum alias occaecati. Ut perferendis eveniet eligendi necessitatibus laborum doloribus in. Sequi et omnis voluptas recusandae."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"800"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-08T21:26:23.935Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-09T23:21:25.935Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"chat_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sendbird.com/chats/12314"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"seller"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">316</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vickie.legros"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fb_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7582198748976"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hwa.mcglynn@sawaynwolff.us"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Glory Auer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/003/original/april.png?1482815236"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"images"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">133</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/product_images/imgs/000/000/133/original/golden.mcglynn.png?1483910782"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">135</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/product_images/imgs/000/000/135/original/fred.png?1483910783"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint will update the specified product with the provided fields and return a json representation of the just modified product.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>PATCH https://quire-api.herokuapp.com/users/&lt;user_id&gt;/products/&lt;product_id&gt;</code></p>
+<h3 id='headers-5'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your access token</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-5'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>user identifier</td>
 </tr>
 <tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>product_id</td>
+<td>product identifier</td>
+</tr>
+</tbody></table>
+<h3 id='body-3'>Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product.name</td>
+<td>Product name</td>
+<td>false</td>
+</tr>
+<tr>
+<td>product.description</td>
+<td>Product description</td>
+<td>false</td>
+</tr>
+<tr>
+<td>product.price</td>
+<td>Product price</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h2 id='destroy-a-product'>Destroy a product</h2><pre class="highlight shell tab-shell"><code>curl --request DELETE
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+  --url https://quire-api.herokuapp.com/users/2/products/239
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint destroys the specified product associated with the specified user.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>DELETE https://quire-api.herokuapp.com/users/&lt;user_id&gt;/products/&lt;product_id&gt;</code></p>
+<h3 id='headers-6'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your access token</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-6'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>user identifier</td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>product identifier</td>
+</tr>
+</tbody></table>
+<h1 id='product-images'>Product images</h1><h2 id='get-all-the-product-images'>Get all the product images</h2><pre class="highlight shell tab-shell"><code>curl --request GET
+  --url https://quire-api.herokuapp.com/users/2/products/3/images
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/027/original/oneida.png?1483916366"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/028/original/will_beier.png?1483916367"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoints returns all the images of the specified product.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET https://quire-api.herokuapp.com/users/&lt;user_id&gt;/products/&lt;product_id&gt;/images</code></p>
+<h3 id='url-parameters-7'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>user identifier</td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>product identifier</td>
+</tr>
+</tbody></table>
+<h2 id='create-product-image'>Create product image</h2><pre class="highlight shell tab-shell"><code>curl --request POST
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+  --url https://quire-api.herokuapp.com/users/2/products/4/images
+  --data <span class="s1">'
+  {
+    "product_image":{
+        "img_base":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/..."
+    }
+  }
+  '</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/028/original/will_beier.png?1483916367"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint will create a new image for the specified product with the provided fields and return a json representation of the just created image. The specified product will have at most 4 images to be able to admit this one.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>POST https://quire-api.herokuapp.com/users/&lt;user_id&gt;/products/&lt;product_id&gt;/images</code></p>
+<h3 id='headers-7'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your access token</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-8'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>user identifier</td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>product identifier, the product will have at most 4 images to admit this one</td>
+</tr>
+</tbody></table>
+<h3 id='body-4'>Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product_image.img_base</td>
+<td>Product image encoded with base 64. It should follow this format: &quot;data:[file_type];base64,[encoded_image]&quot;. An example of file_type is image/png</td>
+<td>true</td>
+</tr>
+</tbody></table>
+<h2 id='destroy-product-image'>Destroy product image</h2><pre class="highlight shell tab-shell"><code>curl --request DELETE
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+  --url https://quire-api.herokuapp.com/users/2/products/239/images/3
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint destroys the specified product image</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>DELETE https://quire-api.herokuapp.com/users/&lt;user_id&gt;/products/&lt;product_id&gt;/images/&lt;product_image_id&gt;</code></p>
+<h3 id='headers-8'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your access token</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-9'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>user identifier</td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>product identifier</td>
+</tr>
+<tr>
+<td>product_image_id</td>
+<td>product image identifier</td>
+</tr>
+</tbody></table>
+<h1 id='users'>Users</h1><h2 id='update-user'>Update user</h2><pre class="highlight shell tab-shell"><code>curl --request PATCH
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+  --url https://quire-api.herokuapp.com/users/2
+  --data <span class="s1">'
+  {
+    "user": {
+        "last_location": "POINT(-19.42424 0.42424)"
+    }
+  }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">287</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"royal.bosco"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eliza_lakin@rauschumm.biz"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Daniela Von"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_loc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-19.42424"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.42424"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r4Vb5oH7gDDKA47ZBnYCheVx"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"preference_radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint will update the specified user with the provided fields and return a json representation of the just modified user.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>PATCH https://quire-api.herokuapp.com/users/&lt;user_id&gt;</code></p>
+<h3 id='headers-9'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your access token</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-10'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>user identifier</td>
+</tr>
+</tbody></table>
+<h3 id='body-5'>Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user.username</td>
+<td>Username</td>
+<td>false</td>
+</tr>
+<tr>
+<td>user.last_location</td>
+<td>User&#39;s last location. Must follow the EWKT format : &quot;POINT (longitude latitude)&quot;</td>
+<td>false</td>
+</tr>
+<tr>
+<td>user.preference_radius</td>
+<td>User&#39;s radius to define nearby users</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h1 id='wished-products'>Wished products</h1><h2 id='index'>Index</h2><pre class="highlight shell tab-shell"><code>curl --request GET
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+  --url https://quire-api.herokuapp.com/me/wished_products
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Digital Compressor"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Non labore eum et voluptas veniam corrupti deserunt totam. Deleniti aut natus ut adipisci. Aut sit sunt dolorem ut similique possimus quis. Voluptas minus necessitatibus molestias sed. At et maiores consectetur dolorum tempore assumenda."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"448.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-27T05:07:16.444Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chat_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sendbird.com/chats/12314"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seller"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"april"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fb_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7582198748976"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tiesha@williamson.us"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kathy Pollich"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/003/original/kesha_huels.png?1482815236"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/004/original/jackelyn.rice.png?1482815238"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Side Portable Controller 2000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eum quisquam nisi omnis aliquid praesentium vel eligendi. Dolores quisquam deleniti distinctio ducimus est eos. Quaerat enim dolores laboriosam culpa temporibus."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"376.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-27T05:07:11.996Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chat_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sendbird.com/chats/12314"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seller"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"april"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fb_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7582198748976"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tiesha@williamson.us"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kathy Pollich"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/001/original/ivan.png?1482815232"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://quireapp.s3.amazonaws.com/product_images/imgs/000/000/002/original/margy.png?1482815234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint will retrieve the currently logged in user&#39;s wish list&#39;s elements.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET https://quire-api.herokuapp.com/me/wished_products</code></p>
+<h3 id='headers-10'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your access token</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-11'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h3 id='body-6'>Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='create'>Create</h2><pre class="highlight shell tab-shell"><code>curl --request POST
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+  --url https://quire-api.herokuapp.com/me/wished_products
+  --data <span class="s1">'
+  {
+    "wished_product": {
+      "product_id": 34
+    }
+  }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint will add the specified product to the currently logged in user&#39;s wish list. It will also mark the product to be skipped.</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>POST https://quire-api.herokuapp.com/me/wished_products</code></p>
+<h3 id='headers-11'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your access token</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-12'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h3 id='body-7'>Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wished_product.product_id</td>
+<td>Product&#39;s id</td>
+<td>true</td>
+</tr>
+</tbody></table>
+<h2 id='delete'>Delete</h2><pre class="highlight shell tab-shell"><code>curl --request DELETE
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+  --url https://quire-api.herokuapp.com/me/wished_products/356
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint will remove the specified product from the currently logged in user&#39;s wish list. It will also unmark the product so that it&#39;s shown to the user again.</p>
+<h3 id='http-request-15'>HTTP Request</h3>
+<p><code>DELETE https://quire-api.herokuapp.com/me/wished_products/&lt;product_id&gt;</code></p>
+<h3 id='headers-12'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your access token</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-13'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product_id</td>
+<td>The product to delete&#39;s id</td>
+</tr>
+</tbody></table>
+<h1 id='skipped-products'>Skipped products</h1><h2 id='create-2'>Create</h2><pre class="highlight shell tab-shell"><code>curl --request POST
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+  --url https://quire-api.herokuapp.com/me/skipped_products
+  --data <span class="s1">'
+  {
+    "skipped_product": {
+      "product_id": 34
+    }
+  }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint will &#39;mark&#39; the specified product so that it&#39;s not shown to the currently logged in user.</p>
+<h3 id='http-request-16'>HTTP Request</h3>
+<p><code>POST https://quire-api.herokuapp.com/me/skipped_products</code></p>
+<h3 id='headers-13'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your access token</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-14'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h3 id='body-8'>Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>skipped_product.product_id</td>
+<td>Product&#39;s id</td>
+<td>true</td>
+</tr>
+</tbody></table>
+<h1 id='chats'>Chats</h1><h2 id='create-3'>Create</h2><pre class="highlight shell tab-shell"><code>curl --request POST
+  --header <span class="s2">"Authorization: meowmeowmeow"</span>
+  --url https://quire-api.herokuapp.com/me/chats
+  --data <span class="s1">'
+  {
+    "chat": {
+      "creator_id": 34,
+      "product_id": 735,
+      "url": "http://sendbird.com/chats/3298523"
+    }
+  }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">346</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sendbird.com/chats/4949"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint will create a record of a chat created in SendBird. It will also mark the product to be skipped.</p>
+<h3 id='http-request-17'>HTTP Request</h3>
+<p><code>POST https://quire-api.herokuapp.com/me/chats</code></p>
+<h3 id='headers-14'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your access token</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-15'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h3 id='body-9'>Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>chat.creator_id</td>
+<td>The buyer&#39;s id</td>
+<td>true</td>
+</tr>
+<tr>
+<td>chat.product_id</td>
+<td>The product&#39;s id</td>
+<td>true</td>
+</tr>
+<tr>
+<td>chat.url</td>
+<td>The sendbird group channel&#39;s url</td>
+<td>true</td>
 </tr>
 </tbody></table>
 
@@ -493,9 +1516,6 @@ Remember — a happy kitten is an authenticated kitten!
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
